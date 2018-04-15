@@ -6,152 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".StepTracking">
 
-    <HorizontalScrollView
-        android:layout_width="585dp"
-        android:layout_height="74dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="154dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="207dp">
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="195dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="Jogging"
-                tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="298dp" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="195dp"
-                android:layout_height="74dp"
-                android:layout_weight="1"
-                android:text="Pacing"
-                tools:layout_editor_absoluteX="279dp"
-                tools:layout_editor_absoluteY="266dp" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="195dp"
-                android:layout_height="74dp"
-                android:layout_weight="1"
-                android:text="Calorie Burning" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <HorizontalScrollView
-        android:layout_width="480dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="65dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="207dp">
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Monday"
-                tools:layout_editor_absoluteX="270dp"
-                tools:layout_editor_absoluteY="298dp" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Tuesday"
-                tools:layout_editor_absoluteX="279dp"
-                tools:layout_editor_absoluteY="266dp" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Wednesday" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="569dp"
-        android:layout_height="113dp"
-        android:layout_marginLeft="16dp"
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="165dp"
+        android:layout_marginRight="165dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="115dp"
+        android:text="Steps tracking"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large.Inverse"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:layout_editor_absoluteY="17dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/jogging_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/jogging_button" />
+
+            <Button
+                android:id="@+id/pacing_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/pacing_button" />
+
+            <Button
+                android:id="@+id/calorie_burn_button"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/calorie_burning_button" />
+        </LinearLayout>
+    </HorizontalScrollView>
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="162dp"
         android:layout_height="144dp"
-        app:srcCompat="@mipmap/ic_bulb"
-        tools:layout_editor_absoluteX="219dp"
-        tools:layout_editor_absoluteY="372dp" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:contentDescription="placeholder"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:srcCompat="@mipmap/ic_bulb" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your Steps Today"
-        tools:layout_editor_absoluteX="243dp"
-        tools:layout_editor_absoluteY="396dp" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        android:text="12345"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="451dp" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Steps tracking"
-        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large.Inverse"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="32sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="618dp" />
+        android:layout_height="77dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:text="STEPS TIMELINE GOES HERE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp"
-        android:text="Last Week"
+        android:id="@+id/home_button"
+        android:layout_width="130dp"
+        android:layout_height="83dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="homeButton"
+        android:text="@string/home_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1 April"
-        tools:layout_editor_absoluteX="263dp"
-        tools:layout_editor_absoluteY="825dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+        app:layout_constraintVertical_bias="0.292" />
 
 </android.support.constraint.ConstraintLayout>
