@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">StepCounter</string>
-    <string name="step_counter">Steps Count: </string>
+    <string name="step_counter">Steps: </string>
     <string name="sensor_strings">Sensor existence</string>
 </resources>
