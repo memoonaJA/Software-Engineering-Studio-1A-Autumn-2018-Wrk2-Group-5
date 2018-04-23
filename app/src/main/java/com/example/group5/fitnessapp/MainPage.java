@@ -6,7 +6,10 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
+import android.content.Intent;
+import android.view.View;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -23,6 +26,7 @@ public class MainPage extends AppCompatActivity implements SensorEventListener{
     private Sensor accelerometerSensor;
     private SensorManager sensManager;
     private TextView sensorText;
+
     private int steps = 0; //global variable keeps count of total steps taken
 
     BarChart barChart;
@@ -59,7 +63,26 @@ public class MainPage extends AppCompatActivity implements SensorEventListener{
         barChart.setScaleEnabled(true);*/
     }
 
+    public void onStepTrack(View view){
+        Intent i = new Intent(MainPage.this, StepTracking.class);
+        startActivity(i); //launches step tracker
 
+    }
+    public void onDetails(View view){
+        Intent i = new Intent(MainPage.this, ReportsActivity.class);
+        startActivity(i); //launches step tracker
+
+    }
+    public void onProgress(View view){
+        Intent i = new Intent(MainPage.this, Self.class);
+        startActivity(i); //launches step tracker
+
+    }
+    public void onCalculator(View view){
+        Intent i = new Intent(MainPage.this, CalorieCalculatorActivity.class);
+        startActivity(i); //launches step tracker
+
+    }
     @Override
     public void onSensorChanged(SensorEvent event) {
         double x = (double) event.values[0]; //Convert acceleration values to doubles
@@ -78,6 +101,8 @@ public class MainPage extends AppCompatActivity implements SensorEventListener{
             //textView.setText("Sensor Data (Vector Length): " + sensorData); //Displays meaningful sensor data
         }
     }
+
+
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {

@@ -82,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/chart2"
+            android:id="@+id/bargraph"
             android:layout_width="match_parent"
             android:layout_height="224dp"></com.github.mikephil.charting.charts.PieChart>
     </LinearLayout>
