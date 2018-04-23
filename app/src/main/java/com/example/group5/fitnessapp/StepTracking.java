@@ -12,14 +12,14 @@ import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import java.util.ArrayList;
 
 public class StepTracking extends AppCompatActivity {
-  //  BarChart barChart;
+    BarChart barChart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step_tracking);
 
-        /*barChart = findViewById(R.id.bargraph);
+        barChart = findViewById(R.id.bargraph);
 
         ArrayList<BarEntry> barEntries = new ArrayList<>();
         barEntries.add(new BarEntry(44f,0));
@@ -43,6 +43,6 @@ public class StepTracking extends AppCompatActivity {
 
         barChart.setTouchEnabled(true);
         barChart.setDragEnabled(true);
-        barChart.setScaleEnabled(true); */
+        barChart.setScaleEnabled(true);
     }
 }
