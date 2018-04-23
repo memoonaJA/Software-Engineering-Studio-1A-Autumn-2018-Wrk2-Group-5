@@ -160,6 +160,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
+        <TextView
+            android:id="@+id/stepCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/step_Count"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            app:layout_constraintVertical_bias="0.0"
+            android:layout_marginLeft="16dp" />
+
         <com.github.mikephil.charting.charts.BarChart
             android:id="@+id/bargraph"
             android:layout_width="match_parent"
@@ -167,29 +182,4 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/stepCount"
-        android:layout_width="164dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/step_Count"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <LinearLayout
-        android:id="@+id/lineLayout3"
-        android:layout_width="585dp"
-        android:layout_height="328dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/chart"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></com.github.mikephil.charting.charts.PieChart>
-    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

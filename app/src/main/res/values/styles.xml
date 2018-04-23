@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- For resolving @id/visible render bug -->
+    <item name="visible" type="id"/>
+    <item name="masked" type="id"/>
 </resources>

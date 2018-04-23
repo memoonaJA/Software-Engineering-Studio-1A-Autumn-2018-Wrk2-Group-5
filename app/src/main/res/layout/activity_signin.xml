@@ -120,7 +120,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="16dp"
-                    android:text="@string/action_login"
+                    android:text="@string/action_sign_up"
                     android:textStyle="bold" /><![CDATA[
 
                 android:layout_marginTop="16dp"
