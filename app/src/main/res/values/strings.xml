@@ -27,7 +27,7 @@
     <string name="kcal">kcal</string>
     <string name="title_steps">steps</string>
     <string name="help">Help</string>
-    <string name="setting">Setting</string>
+    <string name="action_setting">Setting</string>
     <string name="week_bar">Week bar</string>
     <string name="day_bar">Day bar</string>
     <string name="step_Count">Steps: </string>
