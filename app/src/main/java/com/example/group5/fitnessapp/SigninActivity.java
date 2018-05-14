@@ -37,7 +37,6 @@ public class SigninActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         User newUser = createUser();
         if (newUser != null) {
-            // TODO:Verify if users exist in database already, and deny signup
             newUser.setUid(mDatabase.child("users").push().getKey());
             mDatabase.child("users").child(newUser.getUid()).setValue(newUser);
         }

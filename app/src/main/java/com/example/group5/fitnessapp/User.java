@@ -1,9 +1,5 @@
 package com.example.group5.fitnessapp;
 
-/**
- * Created by NathL on 29/04/2018.
- */
-
 public class User {
 
     public String email;
