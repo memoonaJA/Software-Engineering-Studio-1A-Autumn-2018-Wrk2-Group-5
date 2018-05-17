@@ -6,7 +6,7 @@
     <string name="action_steptracker">Step Tracker</string>
     <string name="action_me">My Progress</string>
     <string name="calculator">Calorie Calculator</string>
-    <string name="step_Count">Current Steps: </string>
+    <string name="step_Count">Steps: </string>
     <string name="you_have_burned">You have burned:</string>
     <string name="action_setting">Setting</string>
     <string name="help">Help</string>
@@ -36,6 +36,10 @@
     <string name="kcal">kcal</string>
     <string name="week_bar">Week bar</string>
     <string name="day_bar">Day bar</string>
+
+    <!-- step tracker page -->
+    <string name="today_step">Steps taken Today: </string>
+    <string name="today_calorie">Calories Burnt Today: </string>
 
 
 </resources>

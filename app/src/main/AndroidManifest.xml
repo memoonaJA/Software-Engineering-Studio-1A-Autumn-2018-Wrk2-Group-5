@@ -33,7 +33,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.group5.fitnessapp.MainPage" />
         </activity>
-        <activity android:name=".SigninActivity"></activity>
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>
