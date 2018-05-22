@@ -6,6 +6,12 @@ public class User {
     public String password;
     private String Uid;
 
+    public int age;
+    public double height;
+    public double weight;
+    public double intake;
+    public String goal;
+
     public User() {
         //Required for calls to DataSnapshot.getValue(User.class)
     }

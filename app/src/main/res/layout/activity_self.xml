@@ -70,40 +70,137 @@
                             android:text="-BIO-"
                             android:textColor="@color/colorPrimary" />
 
-                        <TextView
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="left"
-                            android:text="Weight:"
-                            android:layout_marginTop="15dp"/>
+                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="left"
-                            android:text="Height:"
-                            android:layout_marginTop="15dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="15dp"
+                                android:layout_weight="1"
+                                android:text="Weight:" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="left"
-                            android:text="Age:"
-                            android:layout_marginTop="15dp"/>
+                            <EditText
+                                android:id="@+id/editWeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:autoText="false"
+                                android:contextClickable="false"
+                                android:cursorVisible="false"
+                                android:defaultFocusHighlightEnabled="false"
+                                android:editable="false"
+                                android:ems="5"
+                                android:focusable="false"
+                                android:hint="Enter your weight"
+                                android:inputType="textPersonName"
+                                android:singleLine="false" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="left"
-                            android:text="Daily Calorie Intake Limit:"
-                            android:layout_marginTop="15dp"/>
+                        </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="left"
-                            android:text="Personal Goal:"
-                            android:layout_marginTop="15dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="12dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="15dp"
+                                android:layout_weight="1"
+                                android:text="Height:" />
+
+                            <EditText
+                                android:id="@+id/editHeight"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:ems="5"
+                                android:focusable="false"
+                                android:hint="Enter your height"
+                                android:inputType="textPersonName" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="15dp"
+                                android:layout_weight="1"
+                                android:text="Age:" />
+
+                            <EditText
+                                android:id="@+id/editAge"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="5"
+                                android:focusable="false"
+                                android:hint="Enter your age"
+                                android:inputType="textPersonName" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="15dp"
+                                android:layout_weight="1"
+                                android:text="Daily Calorie Intake Limit:" />
+
+                            <EditText
+                                android:id="@+id/editIntake"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="5"
+                                android:focusable="false"
+                                android:hint="Enter your intake limit"
+                                android:inputType="textPersonName" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="15dp"
+                                android:layout_weight="1"
+                                android:text="Personal Goal:" />
+
+                            <EditText
+                                android:id="@+id/editGoal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="5"
+                                android:focusable="false"
+                                android:hint="Enter your personal goal"
+                                android:inputType="textPersonName" />
+                        </LinearLayout>
 
 
                     </LinearLayout>
@@ -119,5 +216,6 @@
         android:layout_below="@+id/linearLayout3"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
+        android:onClick="onEdit"
         android:text="EDIT INFORMATION" />
 </RelativeLayout>

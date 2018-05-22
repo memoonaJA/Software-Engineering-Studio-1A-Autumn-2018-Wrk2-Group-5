@@ -41,4 +41,5 @@
     <!-- step tracker page -->
     <string name="today_step">Steps taken Today: </string>
     <string name="today_calorie">Calories Burnt Today: </string>
+    <string name="title_activity_self_edit">SelfEdit</string>
 </resources>
