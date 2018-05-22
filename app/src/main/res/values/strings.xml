@@ -2,6 +2,12 @@
     <string name="app_name">FitnessApp</string>
     <string name="title_activity_login">Login</string>
 
+    <!-- Main page strings, note some activities may use same strings-->
+    <string name="action_steptracker">Step Tracker</string>
+    <string name="calculator">Calorie Calculator</string>
+    <string name="action_setting">Setting</string>
+    <string name="action_details">My Details</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
@@ -31,4 +37,8 @@
     <string name="week_bar">Week bar</string>
     <string name="day_bar">Day bar</string>
     <string name="step_Count">Steps: </string>
+
+    <!-- step tracker page -->
+    <string name="today_step">Steps taken Today: </string>
+    <string name="today_calorie">Calories Burnt Today: </string>
 </resources>
