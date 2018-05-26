@@ -11,11 +11,7 @@ import android.widget.TextView;
 import android.content.Intent;
 import android.view.View;
 
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 
@@ -26,62 +22,52 @@ public class MainPage extends AppCompatActivity implements SensorEventListener{
     private Sensor accelerometerSensor;
     private SensorManager sensManager;
     private TextView sensorText;
+    private TextView calorieText;
+    public int steps = 0; //global variable keeps count of total steps taken
+    private double calorie = 0;
 
-    private int steps = 0; //global variable keeps count of total steps taken
+    private FirebaseAuth mAuth;
 
-    BarChart barChart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+
+        mAuth = FirebaseAuth.getInstance();
+
         sensorText = (TextView)  findViewById(R.id.stepCount);
+        calorieText = (TextView) findViewById(R.id.calorieBurnt);
         sensManager = (SensorManager)getSystemService(SENSOR_SERVICE); //Use getsystemservice to retrieve a sensorManager for accessing sensors
         accelerometerSensor = sensManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
-        /*barChart = findViewById(R.id.bargraph);
-
-        ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(44f,0));
-        barEntries.add(new BarEntry(44f,1));
-        barEntries.add(new BarEntry(44f,2));
-        barEntries.add(new BarEntry(44f,3));
-        barEntries.add(new BarEntry(44f,4));
-        BarDataSet barDataSet = new BarDataSet(barEntries,"Dates");
-
-        ArrayList<String> theDates = new ArrayList<>();
-        theDates.add("Monday");
-        theDates.add("Tuesday");
-        theDates.add("Wednesday");
-        theDates.add("Thursday");
-        theDates.add("Friday");
-
-        BarData theData = new BarData((IBarDataSet) theDates,barDataSet);
-        barChart.setData(theData);
-
-        barChart.setTouchEnabled(true);
-        barChart.setDragEnabled(true);
-        barChart.setScaleEnabled(true);*/
     }
 
     public void onStepTrack(View view){
         Intent i = new Intent(MainPage.this, StepTracking.class);
+        i.putExtra("steps", steps);
         startActivity(i); //launches step tracker
-
     }
-    public void onDetails(View view){
-        Intent i = new Intent(MainPage.this, ReportsActivity.class);
-        startActivity(i); //launches step tracker
 
-    }
-    public void onProgress(View view){
+    public void onDetails(View view){ //Opens Self class - user personal details
         Intent i = new Intent(MainPage.this, Self.class);
-        startActivity(i); //launches step tracker
+        startActivity(i); //
 
+    }
+    public void onProgress(View view){ //Opens reports activity which details user progress
+        Intent i = new Intent(MainPage.this, ReportsActivity.class);
+        startActivity(i); //
     }
     public void onCalculator(View view){
         Intent i = new Intent(MainPage.this, CalorieCalculatorActivity.class);
-        startActivity(i); //launches step tracker
+        startActivity(i); //
 
+    }
+
+    public void onLogout(View view){
+        //Sign out user and launch the login page
+        mAuth.signOut();
+        finish();
+        startActivity(new Intent(this, LoginActivity.class));
     }
     @Override
     public void onSensorChanged(SensorEvent event) {
@@ -90,31 +76,36 @@ public class MainPage extends AppCompatActivity implements SensorEventListener{
         double z = (double) event.values[2];
         double sum = Math.pow(x, 2) + Math.pow(y, 2) + Math.pow(z, 2); //Executing that formula
         double sensorData = sqrt(sum);
+
+
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)  //Checks if accelerometer is providing data
         {
             int count = 0; //count for when person walks/jogs/runs
             if (sensorData >= 12 && sensorData <= 17) {
+                calorie = calorie + (0.05); //Estimate for calories burnt per step, so 1 calories for every 20 steps. so 0.05 for 1 step.
                 count++; //When person walks increment the count
+
             }
             steps = steps + count; //Add the count to total steps taken
+            calorie = Math.floor(calorie * 100) / 100; //truncates the decimal places to two.
             sensorText.setText("Steps: " + steps); //print out total steps
             //textView.setText("Sensor Data (Vector Length): " + sensorData); //Displays meaningful sensor data
+            calorieText.setText("You have burned: "+ calorie+ " kcal");
         }
     }
-
-
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
+
     protected void onResume(){ //Register sensors as soon as activity is opened
         super.onResume();
         sensManager.registerListener(this, accelerometerSensor, SensorManager.SENSOR_DELAY_NORMAL);
     }
 
 
-    protected void onStop() { //When Activity is no longer visible, stop counting
+    protected void onStop() { //When Activity is no longer visible, stop counting; take this out if you want it to count in the background
         super.onStop();
         sensManager.unregisterListener(this, accelerometerSensor);
     }
