@@ -15,6 +15,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /*
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SignupActivity extends AppCompatActivity {
 
-    //private DatabaseReference mDatabase;
+    private DatabaseReference mDatabase;
     //private DatabaseReference mUsers;
     //Test test test test test test 
     //FireBase authorise object
@@ -45,6 +48,7 @@ public class SignupActivity extends AppCompatActivity {
 
         //initialise firebase object
         mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         progressDialog = new ProgressDialog(this);
         //If user is already logged in, navigate them to the mainpage (the profile page)
@@ -93,6 +97,9 @@ public class SignupActivity extends AppCompatActivity {
                     //we will start the main activty here
                     //profile activity here
                     finish();
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    StepInformation step = new StepInformation("0");
+                    mDatabase.child(user.getUid()).child("steps").setValue(step);
                     startActivity(new Intent(getApplicationContext(), MainPage.class));
 
                 }else {

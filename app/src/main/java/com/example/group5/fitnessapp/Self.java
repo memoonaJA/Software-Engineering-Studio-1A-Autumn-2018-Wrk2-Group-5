@@ -84,13 +84,14 @@ public class Self extends AppCompatActivity {
             finish();
             startActivity(new Intent (this, LoginActivity.class));
         }
-        //Implement value listener which executes a method everytime something changes in the database
-        mDatabase.child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+        //Implement value listener which executes a method every time something changes in the database
+        mDatabase.child(mAuth.getCurrentUser().getUid()).child("user").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 FirebaseUser current = mAuth.getCurrentUser();
-                //this for loop is iterating through each variable in the users node
-                //e.g first weight, next intake etc.
+                //Since we added a valueEventListner for the specific user child,
+                //We can simply user the datasnapshot to get the value of variable stored under their id
+
                 String weight = (String) dataSnapshot.child("weight").getValue();
                 String height = (String) dataSnapshot.child("height").getValue();
                 String age = (String) dataSnapshot.child("age").getValue();
@@ -125,7 +126,7 @@ public class Self extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         //Add this information to the databsae under that current users id
         //Will use user id to create a node and then store that information in that node
-        mDatabase.child(user.getUid()).setValue(userInformation);
+        mDatabase.child(user.getUid()).child("user").setValue(userInformation);
     }
 
     void onEdit(View view) {
