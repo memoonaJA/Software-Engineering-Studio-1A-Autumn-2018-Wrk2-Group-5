@@ -5,16 +5,16 @@ public class User {
     public String weight;
     public String height;
     public String age;
-    public String intake;
-    public String goal;
+    public String gender;
+    //public String goal;
 
-    public User(String weight, String height, String age, String intake, String goal) {
+    public User(String weight, String height, String age, String gender, String name) {
         //this.name = name;
         this.weight = weight;
         this.height = height;
         this.age = age;
-        this.intake = intake;
-        this.goal = goal;
+        this.gender = gender;
+        this.name = name;
     }
 
     public String getName() {
@@ -33,12 +33,8 @@ public class User {
         return age;
     }
 
-    public String getIntake() {
-        return intake;
-    }
-
-    public String getGoal() {
-        return goal;
+    public String getGender() {
+        return gender;
     }
 
     public void setName(String name) {
@@ -57,13 +53,10 @@ public class User {
         this.age = age;
     }
 
-    public void setIntake(String intake) {
-        this.intake = intake;
+    public void setGender(String intake) {
+        this.gender = intake;
     }
 
-    public void setGoal(String goal) {
-        this.goal = goal;
-    }
     /*
     public String email;
     public String password;
