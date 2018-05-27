@@ -40,7 +40,7 @@
 
                 <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="421dp"
                     android:layout_marginTop="85dp"
                     android:background="@color/colorWhite"
                     app:cardBackgroundColor="@color/cardview_light_background"
@@ -66,20 +66,38 @@
                             android:textSize="25sp"
                             android:textStyle="bold" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_horizontal"
-                            android:text="-BIO-"
-                            android:textColor="@color/colorPrimary" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="73dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:layout_marginTop="15dp"
+                                android:layout_weight="1"
+                                android:text="Name:" />
+
+                            <EditText
+                                android:id="@+id/editName"
+                                android:layout_width="254dp"
+                                android:layout_height="40dp"
+                                android:layout_weight="1"
+                                android:ems="5"
+                                android:focusable="false"
+                                android:hint="Enter your name"
+                                android:inputType="textPersonName" />
+
+                        </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="79dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="left"
                                 android:layout_marginTop="15dp"
@@ -88,8 +106,8 @@
 
                             <EditText
                                 android:id="@+id/editWeight"
-                                android:layout_width="146dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="260dp"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:autoText="false"
                                 android:contextClickable="false"
@@ -111,7 +129,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="12dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="left"
                                 android:layout_marginTop="15dp"
@@ -120,8 +138,8 @@
 
                             <EditText
                                 android:id="@+id/editHeight"
-                                android:layout_width="wrap_content"
-                                android:layout_height="match_parent"
+                                android:layout_width="227dp"
+                                android:layout_height="40dp"
                                 android:layout_weight="1"
                                 android:ems="5"
                                 android:focusable="false"
@@ -137,7 +155,7 @@
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="61dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="left"
                                 android:layout_marginTop="15dp"
@@ -146,8 +164,8 @@
 
                             <EditText
                                 android:id="@+id/editAge"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_width="241dp"
+                                android:layout_height="40dp"
                                 android:layout_weight="1"
                                 android:ems="5"
                                 android:focusable="false"
@@ -158,51 +176,27 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="left"
-                                android:layout_marginTop="15dp"
-                                android:layout_weight="1"
-                                android:text="Daily Calorie Intake Limit:" />
-
-                            <EditText
-                                android:id="@+id/editIntake"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:ems="5"
-                                android:focusable="false"
-                                android:hint="Enter your intake limit"
-                                android:inputType="textPersonName" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="wrap_content"
+                                android:layout_width="135dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="left"
                                 android:layout_marginTop="15dp"
                                 android:layout_weight="1"
-                                android:text="Personal Goal:" />
+                                android:text="Gender" />
 
                             <EditText
-                                android:id="@+id/editGoal"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:id="@+id/editGender"
+                                android:layout_width="316dp"
+                                android:layout_height="40dp"
                                 android:layout_weight="1"
                                 android:ems="5"
                                 android:focusable="false"
-                                android:hint="Enter your personal goal"
-                                android:inputType="textPersonName" />
+                                android:hint="Enter your gender"
+                                android:inputType="text|textAutoCorrect" />
+
                         </LinearLayout>
 
 
@@ -216,9 +210,8 @@
         android:id="@+id/button_editInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout3"
+        android:layout_alignBottom="@+id/linearLayout3"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="17dp"
         android:onClick="onEdit"
         android:text="EDIT INFORMATION" />
 </RelativeLayout>

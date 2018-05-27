@@ -3,7 +3,7 @@
     <string name="title_activity_login">Login</string>
 
     <!-- Main page strings, note some activities may use same strings-->
-    <string name="action_steptracker">Step Tracker</string>
+    <string name="action_steptracker">Progress Page</string>
     <string name="calculator">Calorie Calculator</string>
     <string name="action_setting">Setting</string>
     <string name="action_details">My Details</string>
@@ -30,17 +30,24 @@
     <string name="action_main">Main</string>
     <string name="action_me">Me</string>
     <string name="title_you_have_ran">You have ran:</string>
-    <string name="you_have_burned">You have burned:</string>
+    <string name="you_have_burned">You have currently burned:</string>
     <string name="kcal">kcal</string>
     <string name="title_steps">steps</string>
     <string name="help">Help</string>
     <string name="setting">Setting</string>
     <string name="week_bar">Week bar</string>
     <string name="day_bar">Day bar</string>
-    <string name="step_Count">Steps: </string>
+    <string name="step_Count">Steps current taken: </string>
 
     <!-- step tracker page -->
     <string name="today_step">Steps taken Today: </string>
     <string name="today_calorie">Calories Burnt Today: </string>
     <string name="title_activity_self_edit">SelfEdit</string>
+
+    <!-- Calorie Calculator page -->
+    <string name="daily_intake">Recommended Daily Calorie Intake: </string>
+    <string-array name="spinner">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
 </resources>

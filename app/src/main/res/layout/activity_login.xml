@@ -15,13 +15,15 @@
     <!-- Login progress -->
 
     <TextView
-        android:id="@+id/login_TextView"
+        android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:text="@string/action_login"
-        android:textAppearance="@android:style/TextAppearance.Large.Inverse"
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="32sp" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Login Page"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <ProgressBar
         android:id="@+id/login_progress"
@@ -30,6 +32,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="247dp"
+        android:layout_height="148dp"
+        app:srcCompat="@mipmap/f3" />
 
     <ScrollView
         android:id="@+id/login_form"
@@ -77,17 +85,14 @@
 
             <Button
                 android:id="@+id/email_login_button"
-                style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
                 android:onClick="onLogin"
-                android:text="@string/action_login"
-                android:textStyle="bold" />
+                android:text="@string/action_login" />
 
             <Button
                 android:id="@+id/sign_up_button"
-                style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:onClick="triggerSignUp"
