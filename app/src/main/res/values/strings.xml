@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FitnessApp</string>
+    <string name="app_name">F3 Fitness</string>
     <string name="title_activity_login">Login</string>
 
     <!-- Main page strings, note some activities may use same strings-->

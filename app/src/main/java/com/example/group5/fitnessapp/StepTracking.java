@@ -68,6 +68,20 @@ public class StepTracking extends AppCompatActivity{
         Toast.makeText(this, "Days are represented by numbers starting with Sunday at 1", Toast.LENGTH_LONG).show();
     }
 
+    public void onResetGraph(View view) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        StepInformation step = new StepInformation("0", "0");
+        databaseReference.child(user.getUid()).child("steps").setValue(step);
+        Toast.makeText(this, "Graph reset please refresh the page", Toast.LENGTH_LONG).show();
+
+    }
+
+    public void onResetCalorie(View view) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        databaseReference.child(user.getUid()).child("steps").child("calories").setValue("0");
+        Toast.makeText(this, "Daily calories reset", Toast.LENGTH_LONG).show();
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
